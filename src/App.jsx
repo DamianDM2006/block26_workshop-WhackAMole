@@ -7,8 +7,6 @@ const App = () => {
       <h1>Damian's Whack-A-Mole</h1>
       <Controls />
       <PlayingField />
-    
-    
     </>
   );
 };
