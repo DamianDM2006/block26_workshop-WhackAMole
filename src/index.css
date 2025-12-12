@@ -7,3 +7,12 @@
   background-image: url("/mole.png");
 }
 
+.control {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.reset {
+  width: 10em;
+  height: 3em;
+}
