@@ -1,9 +1,18 @@
 
 const PlayingField = () => {
+
+  const rows = 3;
+  const columns =3;
+  const holes = rows * columns;
+
+  
+
   return (
-    <section className="field">
-      <h2>Playing Field</h2>
-    </section>
+    <figure className="field">
+      <img
+        className="hole"
+        src="public/hole.png" />
+    </figure>
   )
 };
 
