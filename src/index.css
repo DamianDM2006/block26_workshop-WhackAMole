@@ -18,3 +18,9 @@
   width: 10em;
   height: 3em;
 }
+
+.field {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+}
