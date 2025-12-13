@@ -2,7 +2,7 @@
 const PlayingField = () => {
 
   const rows = 3;
-  const columns =3;
+  const columns = 4;
   const holes = rows * columns;
 
   const holeArray = Array.from({ length: holes }, (_, index) => 
@@ -20,8 +20,20 @@ const PlayingField = () => {
  *          onClick to add to score and empty hole
  *          }
 } */
+  
+const playingField = holeArray.map((hole) =>  <img key={hole.id} className="hole" />);
+console.log(playingField);
 
-  return <img className="hole" />
+  return (
+    <figure
+      className="field"
+      style={{
+        "--columns": columns,
+        "--rows": rows
+      }}
+    >{playingField}</figure>
+    
+  )
 };
 
 export default PlayingField;
