@@ -11,16 +11,6 @@ const PlayingField = () => {
     }));
 
 const playingField = holeArray.map((hole) =>  <img key={hole.id} className="hole" />);
-console.log('playingField', playingField);
-
-/** hole{ (type object)
- *    holeNo: which hole is this
- *    holeType: empty or mole (default is empty)
- *      if(holeType = mole) {
- *         amount of time mole is up
- *          onClick to add to score and empty hole
- *          }
-} */
   
   return (
     <nav
