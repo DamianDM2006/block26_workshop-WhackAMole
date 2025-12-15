@@ -13,8 +13,9 @@ const PlayingField = () => {
         "--rows": rows
       }}
     >
-      {playingField.map((hole) =>  (<img key={hole.id} className="hole" />))
-}
+      {playingField.map((hole) => {if (hole.hasMole) return (<img key={hole.id} className="mole" />);
+        return (<img key={hole.id} className="hole" />)}
+        )}
     </nav>
   )
 };

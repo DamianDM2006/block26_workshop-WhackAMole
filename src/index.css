@@ -7,6 +7,8 @@
 
 .mole {
   background-image: url("/mole.png");
+  width: 17vw;
+  height: 17vh;
 }
 
 .control {
