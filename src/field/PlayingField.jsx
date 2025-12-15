@@ -1,16 +1,9 @@
+import { useGame } from "../GameContext";
 
 const PlayingField = () => {
-
-  const rows = 3;
-  const columns = 3;
-  const holes = rows * columns;
-
-  const holeArray = Array.from({ length: holes }, (_, index) => 
-    ({id: index + 1,
-      isEmpty: true
-    }));
-
-const playingField = holeArray.map((hole) =>  <img key={hole.id} className="hole" />);
+  const { playingField, rows, columns } = useGame();
+  console.log(playingField);
+  
   
   return (
     <nav
@@ -20,7 +13,8 @@ const playingField = holeArray.map((hole) =>  <img key={hole.id} className="hole
         "--rows": rows
       }}
     >
-      {playingField}
+      {playingField.map((hole) =>  (<img key={hole.id} className="hole" />))
+}
     </nav>
   )
 };
