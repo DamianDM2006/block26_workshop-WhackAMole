@@ -8,13 +8,17 @@ const holes = rows * columns;
 
 export const GameProvider = ({ children }) => {
   const [playingField, setPlayingField] = useState(makeField());
-
+  const [score, setScore] = useState(0);
   
-
-  // const emptyField = holeArray.map((hole) =>  <img key={hole.id} className="hole" />);
+  const whack = () => {
+    setPlayingField(makeField(playingField));
+    setScore(score + 1);
+  }
 
 
   const value = {
+    score,
+    whack,
     playingField,
     rows,
     columns,
@@ -37,6 +41,11 @@ const makeField = (playingField = []) => {
       hasMole: false
     }));
   let mole = Math.floor(Math.random() * holes) + 1;
+
+  while(holeArray[mole].hasMole) {
+    mole = Math.floor(Math.random() * holes) + 1;
+  };
+
   holeArray[mole].hasMole = true;
   return holeArray;
 }
